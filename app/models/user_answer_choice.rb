@@ -1,0 +1,3 @@
+class UserAnswerChoice < ApplicationRecord
+    belongs_to :user
+end
