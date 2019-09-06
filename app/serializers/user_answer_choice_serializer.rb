@@ -1,3 +1,3 @@
 class UserAnswerChoiceSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :letter, :user_id
 end
