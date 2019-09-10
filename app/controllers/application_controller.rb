@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-    # before_action :authorize 
+    before_action :authorize, only: [:users] 
 
     JWT_KEY = File.read(File.expand_path('jwt_key.txt', __dir__))
 
