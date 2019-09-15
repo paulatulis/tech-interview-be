@@ -26,12 +26,38 @@ quiz1 = Quiz.create(title: 'Ruby quiz 1', description: 'test', score: 12, user_i
 quiz2 = Quiz.create(title: 'React quiz 1', description: 'test', score: 3, user_id: andy.id, subject_id: react.id)
 quiz3 = Quiz.create(title: 'JS quiz 1', description: 'test', score: 0, user_id: paula.id, subject_id: js.id)
 
-#  Quiz Questions
-rubyq1 = QuizQuestion.create(question_body: 'Who created Ruby?', quiz_id: quiz1.id)
-rubyq2 = QuizQuestion.create(question_body: 'Here is another sample question', quiz_id: quiz1.id)
-rubyq3 = QuizQuestion.create(question_body: 'Here is one more sample question', quiz_id: quiz1.id)
+#Ruby Quiz
+rubyq1 = QuizQuestion.create(question_body: 'Which of the expressions will return false?', quiz_id: quiz1.id)
+a1rubyq1 = Answer.create(answer_body: "false   ? 'true' : 'false' ", correct: true, quiz_question_id: rubyq1.id)
+a2rubyq1 = Answer.create(answer_body: '0       ? "true" : "false"', correct: false, quiz_question_id: rubyq1.id)
+a3rubyq1 = Answer.create(answer_body: '""      ? "true" : "false"', correct: false, quiz_question_id: rubyq1.id)
+a4rubyq1 = Answer.create(answer_body: "'false' ? 'true' : 'false'", correct: false, quiz_question_id: rubyq1.id)
+
+
+rubyq2 = QuizQuestion.create(question_body: 'Which is the best way to remove any nil values in an array? ex. remove nil from [nil,123,nil,"test"]', quiz_id: quiz1.id)
+a1rubyq2 = Answer.create(answer_body: "[nil,123,nil,'test'].flatten ", correct: false, quiz_question_id: rubyq2.id)
+a2rubyq2 = Answer.create(answer_body: "[nil,123,nil,'test'].remove_nil", correct: false, quiz_question_id: rubyq2.id)
+a3rubyq2 = Answer.create(answer_body: "[nil,123,nil,'test'].compact", correct: true, quiz_question_id: rubyq2.id)
+a4rubyq2 = Answer.create(answer_body: "[nil,123,nil,'test'].sort", correct: false, quiz_question_id: rubyq2.id)
+
+rubyq3 = QuizQuestion.create(question_body: "What is the value of the capitalized variable in the following code: capitalized = ['one', 'two', 'three', 'cat', 'dog', 'parrot'].map {|element| puts element.upcase}", quiz_id: quiz1.id)
+a1rubyq3 = Answer.create(answer_body: "['One', 'Two', 'Three', 'Cat', 'Dog', 'Parrot'] ", correct: false, quiz_question_id: rubyq3.id)
+a2rubyq3 = Answer.create(answer_body: "['ONE', 'TWO', 'THREE', 'CAT', 'DOG', 'PARROT'] ", correct: false, quiz_question_id: rubyq3.id)
+a3rubyq3 = Answer.create(answer_body: "nil", correct: false, quiz_question_id: rubyq3.id)
+a4rubyq3 = Answer.create(answer_body: "[nil, nil ,nil, nil, nil, nil]", correct: true, quiz_question_id: rubyq3.id)
+
+rubyq4 = QuizQuestion.create(question_body: "What does this mean? 'a ||= b'", quiz_id: quiz1.id)
+a1rubyq4 = Answer.create(answer_body: "if a is true, a = a; otherwise, a = b", correct: true, quiz_question_id: rubyq4.id)
+a2rubyq4 = Answer.create(answer_body: "if a exists, and a = b, return true ", correct: false, quiz_question_id: rubyq4.id)
+a3rubyq4 = Answer.create(answer_body: "a is true unless a = b", correct: false, quiz_question_id: rubyq4.id)
+a4rubyq4 = Answer.create(answer_body: "b = a", correct: false, quiz_question_id: rubyq4.id)
+
+
+
+
 
 reactq1 = QuizQuestion.create(question_body: 'What is hoisting?', quiz_id: quiz2.id)
+a1reactq1 = Answer.create(answer_body: "test", correct: false, quiz_question_id: reactq1.id)
 reactq2 = QuizQuestion.create(question_body: 'Here is another sample question', quiz_id: quiz2.id)
 reactq3 = QuizQuestion.create(question_body: 'Here is one more sample question', quiz_id: quiz2.id)
 
@@ -41,9 +67,7 @@ jsq3 = QuizQuestion.create(question_body: 'Here is one more sample question', qu
 
 # Answers 
 
-a1rubyq1 = Answer.create(answer_body: 'your mom', correct: false, quiz_question_id: rubyq1.id)
-a1rubyq1 = Answer.create(answer_body: 'your dad', correct: false, quiz_question_id: rubyq1.id)
-a1rubyq1 = Answer.create(answer_body: 'Yukihiro Matsumoto', correct: true, quiz_question_id: rubyq1.id)
+
 
 # User Answer Choices
 uac1 = UserAnswerChoice.create(letter: 'c', user_id: paula.id)
