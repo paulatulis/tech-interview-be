@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quiz_events
   resources :answers, only: [:index, :show]
   resources :subjects, only: [:index, :show]
   resources :user_answer_choices, only: [:index, :show, :create, :update]
