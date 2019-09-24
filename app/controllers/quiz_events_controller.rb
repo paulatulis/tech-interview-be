@@ -20,7 +20,7 @@ class QuizEventsController < ApplicationController
 
     private
     def quiz_event_params
-        params.require(:quiz_event).permit(:user_id, :quiz_id, :date, :name)
+        params.require(:quiz_event).permit(:user_id, :quiz_id, :score, :name)
     end 
 
 end

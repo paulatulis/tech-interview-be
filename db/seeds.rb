@@ -22,9 +22,9 @@ js = Subject.create(name: 'JavaScript')
 react = Subject.create(name: 'React')
 
 # Quizzes
-quiz1 = Quiz.create(title: 'Ruby quiz 1', description: 'test', score: 12, subject_id: ruby.id)
-quiz2 = Quiz.create(title: 'React quiz 1', description: 'test', score: 3, subject_id: react.id)
-quiz3 = Quiz.create(title: 'JS quiz 1', description: 'test', score: 0, subject_id: js.id)
+quiz1 = Quiz.create(title: 'Ruby quiz 1', description: 'test', subject_id: ruby.id)
+quiz2 = Quiz.create(title: 'React quiz 1', description: 'test', subject_id: react.id)
+quiz3 = Quiz.create(title: 'JS quiz 1', description: 'test', subject_id: js.id)
 
 #Ruby Quiz
 rubyq1 = QuizQuestion.create(question_body: 'Which of the expressions will return false?', quiz_id: quiz1.id)

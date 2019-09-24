@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_201652) do
+ActiveRecord::Schema.define(version: 2019_09_24_152537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2019_09_17_201652) do
   create_table "quiz_events", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "quiz_id"
-    t.date "date"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "score"
     t.index ["quiz_id"], name: "index_quiz_events_on_quiz_id"
     t.index ["user_id"], name: "index_quiz_events_on_user_id"
   end
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2019_09_17_201652) do
   create_table "quizzes", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "score"
     t.bigint "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
