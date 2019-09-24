@@ -1,4 +1,4 @@
 class QuizEventSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :score
   belongs_to :quiz
 end
