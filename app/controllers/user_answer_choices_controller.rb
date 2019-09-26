@@ -12,7 +12,7 @@ class UserAnswerChoicesController < ApplicationController
         @user_answer_choice = UserAnswerChoice.new(user_answer_choice_params)
 
         if @user_answer_choice.save
-            render json: @user, each_serializer: UserSerializer.new(@user), status: :accepted
+            render json: @user_answer_choice, each_serializer: UserAnswerChoiceSerializer.new(@user_answer_choice), status: :accepted
         else 
             render json: {errors: ['did not save']}, status: :unprocessable_entity
         end 
@@ -31,6 +31,6 @@ class UserAnswerChoicesController < ApplicationController
     private 
 
     def user_answer_choice_params
-        params.require(:user_answer_choice).permit(:letter)
+        params.require(:user_answer_choice).permit(:letter, :user_id)
     end 
 end
